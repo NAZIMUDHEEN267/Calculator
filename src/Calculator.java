@@ -1,6 +1,7 @@
 
 	import java.awt.Color;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 	import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -32,6 +33,15 @@ import javax.swing.SwingConstants;
 		//added label into the frame 
 		
 		frame.add(DisplayLabel);
+		
+		
+		
+		//Buttons
+		
+		JButton SevenButton=new JButton("7");
+		SevenButton.setBounds(30,130,80,80);
+		
+		frame.add(SevenButton);
 		
 		
 		
