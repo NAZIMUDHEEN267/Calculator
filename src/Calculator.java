@@ -74,10 +74,11 @@ public class  Calculator implements ActionListener{
 		
 		// label 
 		
-		DisplayLabel=new JLabel("hello");
+		DisplayLabel=new JLabel();
 		DisplayLabel.setBounds(50, 50, 680, 50);
 		DisplayLabel.setBackground(Color.gray);
 		DisplayLabel.setOpaque(true);
+		DisplayLabel.setFont(new Font("Arial", Font.PLAIN, 30));
 		DisplayLabel.setForeground(Color.white);
 		
 		DisplayLabel.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -258,44 +259,74 @@ public class  Calculator implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e){
 			if (e.getSource()==SevenButton) {
-				DisplayLabel.setText("7");
+				String labelText=DisplayLabel.getText();
+				DisplayLabel.setText(labelText+"7");
+								
 			}else if (e.getSource()==EightButton) {
-				DisplayLabel.setText("8");
+				String labelText=DisplayLabel.getText();
+				DisplayLabel.setText(labelText+"8");
+				
 			}else if(e.getSource()==NineButton) {
-				DisplayLabel.setText("9");
+				String labelText=DisplayLabel.getText();
+				DisplayLabel.setText(labelText+"9");
+				
 			}else if(e.getSource()==FourButton) {
-				DisplayLabel.setText("4");
+				String labelText=DisplayLabel.getText();
+				DisplayLabel.setText(labelText+"4");
+				
 			}
 			else if(e.getSource()==FiveButton) {
-				DisplayLabel.setText("5");
+				String labelText=DisplayLabel.getText();
+				DisplayLabel.setText(labelText+"5");
+				
 			}
 			else if(e.getSource()==SixButton) {
-				DisplayLabel.setText("6");
+				String labelText=DisplayLabel.getText();
+				DisplayLabel.setText(labelText+"6");
+				
 			}
 			
 			else if(e.getSource()==OneButton) {
-				DisplayLabel.setText("1");
+				String labelText=DisplayLabel.getText();
+				DisplayLabel.setText(labelText+"1");
+				
 			}
 			else if(e.getSource()==TwoButton) {
-				DisplayLabel.setText("2");
+				String labelText=DisplayLabel.getText();
+				DisplayLabel.setText(labelText+"2");
+				
 			}
 			else if(e.getSource()==ThreeButton) {
-				DisplayLabel.setText("3");
+				String labelText=DisplayLabel.getText();
+				DisplayLabel.setText(labelText+"3");
+				
 			}
 			else if(e.getSource()==ZeroButton) {
-				DisplayLabel.setText("0");
+				String labelText=DisplayLabel.getText();
+				DisplayLabel.setText(labelText+"0");
+				
 			}else if (e.getSource()==AdditionButton) {
+				String labelText=DisplayLabel.getText();
 				DisplayLabel.setText("+");
+				
 			}else if(e.getSource()==MultiplicationButton) {
-				DisplayLabel.setText("*");
+				String labelText=DisplayLabel.getText();
+				DisplayLabel.setText(labelText+"*");
+				
 			}else if(e.getSource()==SubstractionButton) {
-				DisplayLabel.setText("-");
+				String labelText=DisplayLabel.getText();
+				DisplayLabel.setText(labelText+"-");
+				
 			}
 			else if(e.getSource()==divitionButton) {
-				DisplayLabel.setText("/");
+				String labelText=DisplayLabel.getText();
+				DisplayLabel.setText(labelText+"/");
+				
 			}
 			else if(e.getSource()==PercentageButton) {
-				DisplayLabel.setText("%");
+				String labelText=DisplayLabel.getText();
+				DisplayLabel.setText(labelText+"%");
+				
 			}
 			
 		}
