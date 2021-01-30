@@ -4,16 +4,21 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.border.Border;
 
 
 public class  Calculator implements ActionListener{
 
 	
 		//global 
+	
+		boolean isOperatorClicked=false;
+		String oldValue;
 	
 		JFrame frame;
 		
@@ -76,10 +81,15 @@ public class  Calculator implements ActionListener{
 		
 		DisplayLabel=new JLabel();
 		DisplayLabel.setBounds(50, 50, 680, 50);
-		DisplayLabel.setBackground(Color.gray);
+		DisplayLabel.setBackground(Color.white);
 		DisplayLabel.setOpaque(true);
 		DisplayLabel.setFont(new Font("Arial", Font.PLAIN, 30));
-		DisplayLabel.setForeground(Color.white);
+		DisplayLabel.setForeground(Color.black);
+		Border border = BorderFactory.createLineBorder(Color.gray, 5);
+		 
+        // set the border of this component
+        DisplayLabel.setBorder(border);
+ 
 		
 		DisplayLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 		
@@ -259,73 +269,152 @@ public class  Calculator implements ActionListener{
 		
 		public void actionPerformed(ActionEvent e){
 			if (e.getSource()==SevenButton) {
-				String labelText=DisplayLabel.getText();
-				DisplayLabel.setText(labelText+"7");
+				if (isOperatorClicked) {
+					DisplayLabel.setText("7");
+					isOperatorClicked=false;
+				}else {
+					String labelText=DisplayLabel.getText();
+					DisplayLabel.setText(labelText+"7");
+				}
 								
 			}else if (e.getSource()==EightButton) {
-				String labelText=DisplayLabel.getText();
-				DisplayLabel.setText(labelText+"8");
-				
+				if (isOperatorClicked) {
+					DisplayLabel.setText("8");
+					isOperatorClicked=false;
+				}else {
+					String labelText=DisplayLabel.getText();
+					DisplayLabel.setText(labelText+"8");
+				}
+					
 			}else if(e.getSource()==NineButton) {
-				String labelText=DisplayLabel.getText();
-				DisplayLabel.setText(labelText+"9");
-				
+				if (isOperatorClicked) {
+					DisplayLabel.setText("9");
+					isOperatorClicked=false;
+				}else {
+					String labelText=DisplayLabel.getText();
+					DisplayLabel.setText(labelText+"9");
+				}
+					
 			}else if(e.getSource()==FourButton) {
-				String labelText=DisplayLabel.getText();
-				DisplayLabel.setText(labelText+"4");
-				
+				if (isOperatorClicked) {
+					DisplayLabel.setText("4");
+					isOperatorClicked=false;
+				}else {
+					String labelText=DisplayLabel.getText();
+					DisplayLabel.setText(labelText+"4");
+				}
+					
 			}
 			else if(e.getSource()==FiveButton) {
-				String labelText=DisplayLabel.getText();
-				DisplayLabel.setText(labelText+"5");
-				
+				if (isOperatorClicked) {
+					DisplayLabel.setText("5");
+					isOperatorClicked=false;
+				}else {
+					String labelText=DisplayLabel.getText();
+					DisplayLabel.setText(labelText+"5");
+				}
+					
 			}
 			else if(e.getSource()==SixButton) {
-				String labelText=DisplayLabel.getText();
-				DisplayLabel.setText(labelText+"6");
+				if (isOperatorClicked) {
+					DisplayLabel.setText("6");
+					isOperatorClicked=false;
+				}else {
+					String labelText=DisplayLabel.getText();
+					DisplayLabel.setText(labelText+"6");
+				}
+					
 				
 			}
 			
 			else if(e.getSource()==OneButton) {
-				String labelText=DisplayLabel.getText();
-				DisplayLabel.setText(labelText+"1");
+				if (isOperatorClicked) {
+					DisplayLabel.setText("1");
+					isOperatorClicked=false;
+				}else {
+					String labelText=DisplayLabel.getText();
+					DisplayLabel.setText(labelText+"1");
+				}
+					
 				
 			}
 			else if(e.getSource()==TwoButton) {
-				String labelText=DisplayLabel.getText();
-				DisplayLabel.setText(labelText+"2");
+				if (isOperatorClicked) {
+					DisplayLabel.setText("2");
+					isOperatorClicked=false;
+				}else {
+					String labelText=DisplayLabel.getText();
+					DisplayLabel.setText(labelText+"2");
+				}
+					
 				
 			}
 			else if(e.getSource()==ThreeButton) {
-				String labelText=DisplayLabel.getText();
-				DisplayLabel.setText(labelText+"3");
+				if (isOperatorClicked) {
+					DisplayLabel.setText("3");
+					isOperatorClicked=false;
+				}else {
+					String labelText=DisplayLabel.getText();
+					DisplayLabel.setText(labelText+"3");
+				}
+					
 				
 			}
 			else if(e.getSource()==ZeroButton) {
-				String labelText=DisplayLabel.getText();
-				DisplayLabel.setText(labelText+"0");
+				if (isOperatorClicked) {
+					DisplayLabel.setText("0");
+					isOperatorClicked=false;
+				}else {
+					String labelText=DisplayLabel.getText();
+					DisplayLabel.setText(labelText+"0");
+				}
+					
+			}else if(e.getSource()==DotButton) {
+				if (isOperatorClicked) {
+					DisplayLabel.setText(".");
+					isOperatorClicked=false;
+				}else {
+					String labelText=DisplayLabel.getText();
+					DisplayLabel.setText(labelText+".");
+				}
+					
+			}
+			
+			
+			
+			
+			
+			else if (e.getSource()==AdditionButton) {
+				oldValue=DisplayLabel.getText();
+				isOperatorClicked=true;
 				
-			}else if (e.getSource()==AdditionButton) {
-				String labelText=DisplayLabel.getText();
 				DisplayLabel.setText("+");
 				
-			}else if(e.getSource()==MultiplicationButton) {
-				String labelText=DisplayLabel.getText();
-				DisplayLabel.setText(labelText+"*");
+			}else if(e.getSource()==MultiplicationButton) {	
+				oldValue=DisplayLabel.getText();
+				isOperatorClicked=true;
+				DisplayLabel.setText("*");
 				
 			}else if(e.getSource()==SubstractionButton) {
-				String labelText=DisplayLabel.getText();
-				DisplayLabel.setText(labelText+"-");
+				oldValue=DisplayLabel.getText();
+				isOperatorClicked=true;
+				DisplayLabel.setText("-");
 				
 			}
 			else if(e.getSource()==divitionButton) {
-				String labelText=DisplayLabel.getText();
-				DisplayLabel.setText(labelText+"/");
+				oldValue=DisplayLabel.getText();
+				isOperatorClicked=true;
+				DisplayLabel.setText("/");
 				
 			}
 			else if(e.getSource()==PercentageButton) {
-				String labelText=DisplayLabel.getText();
-				DisplayLabel.setText(labelText+"%");
+				oldValue=DisplayLabel.getText();
+				isOperatorClicked=true;
+				DisplayLabel.setText("%");
+				
+			}
+			else if(e.getSource()==AllClearButton) {
+				DisplayLabel.setText("");
 				
 			}
 			
